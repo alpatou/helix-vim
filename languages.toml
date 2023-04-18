@@ -1,0 +1,13 @@
+[[language]]
+name = "rust"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[language.config]
+checkOnSave = {command = "clippy"}
+cargo = { "features" = "all" }
+
+[[language]]
+name = "toml"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }

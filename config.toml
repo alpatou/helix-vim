@@ -6,8 +6,9 @@ display-messages = true
 [keys.normal]
 #copied from my config
 C-s = ":w"                                                                      
-C-k = "goto_prev_paragraph"                                                    
-C-j = "goto_next_paragraph"                                                    
+#C-k = "goto_prev_paragraph"                                                    
+# decide later
+#C-j = "goto_next_paragraph"                                                    
 C-n = ["search_selection", "search_next"]                                      
 C-p = ["search_selection", "search_prev"]                                      
 # Quick iteration on config changes

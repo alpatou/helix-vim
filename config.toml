@@ -1,4 +1,9 @@
-theme = "catppuccin_macchiato"
+theme = "adwaita-dark"
+
+[editor]
+line-number = "relative"
+cursorline = true
+cursorcolumn = true
 
 [editor.lsp]                                                                    
 display-messages = true                                                        

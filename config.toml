@@ -4,9 +4,13 @@ theme = "adwaita-dark"
 line-number = "relative"
 cursorline = true
 cursorcolumn = true
+bufferline = "multiple"
 
 [editor.lsp]                                                                    
 display-messages = true                                                        
+
+[editor.cursor-shape]
+insert = "bar"
 
 [keys.normal]
 #copied from my config

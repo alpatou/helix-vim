@@ -20,6 +20,8 @@ C-s = ":w"
 #C-j = "goto_next_paragraph"                                                    
 C-n = ["search_selection", "search_next"]                                      
 C-p = ["search_selection", "search_prev"]                                      
+"*" = ["search_selection", "search_next"]                                      
+"#" = ["search_selection", "search_prev"]                                      
 # Quick iteration on config changes
 C-o = ":config-open"
 C-r = ":config-reload"

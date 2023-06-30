@@ -36,6 +36,10 @@ C-l = "select_next_sibling"
 o = ["open_below", "insert_mode"]
 O = ["open_above", "insert_mode"]
 
+# switch between open tabs
+"]" = "goto_next_buffer"
+"[" = "goto_previous_buffer"
+
 # Muscle memory
 "{" = ["goto_prev_paragraph", "collapse_selection"]
 "}" = ["goto_next_paragraph", "collapse_selection"]

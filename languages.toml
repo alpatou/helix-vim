@@ -11,3 +11,12 @@ cargo = { "features" = "all" }
 name = "toml"
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
+
+
+[[language]]
+name = "c"
+auto-format = true
+scope = "source.c"
+file-types = ["c", "h"]
+roots = ["compile_commands.json"]
+language-server = { command = "clangd" }

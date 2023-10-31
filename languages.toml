@@ -1,25 +1,63 @@
 [[language]]
 name = "bash"
+scope = "source.shell"
+file-types = ["sh"]
+comment-token = "#"
+indent = { tab-width = 4, unit = "  " }
+formatter = { command = "shfmt" , args = ["-s", "-ci"] }
+language-servers = [ "bash-language-server" ]
 auto-format = true
 
-# add in file
-[language-server.ansible-language-server]
-command = "ansible-language-server"
-args = ["--stdio"]
 
 [[language]]
 name = "rust"
+scope = "source.rust"
+file-types = ["rs"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "   " }
+formatter = { command = "rustfmt" , args = ["--emit=stdout"] }
+language-servers = [ "rust-analyzer" ]
 auto-format = true
-indent = { tab-width = 2, unit = "  " }
-
-[language.config]
-checkOnSave = {command = "clippy"}
-cargo = { "features" = "all" }
 
 [[language]]
-name = "toml"
+name = "go"
+scope = "source.go"
+file-types = ["go"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "   " }
+formatter = { command = "gofmt" , args = ["-s"] }
+language-servers = [ "gopls" ]
 auto-format = true
-indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "php"
+scope = "source.php"
+file-types = ["php"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "   " }
+formatter = { command = "php-cs-fixer" , args = ["fix", "--using-cache=no"] }
+language-servers = [ "intelephense" ]
+auto-format = true
+
+[[language]]
+name = "typescript"
+scope = "source.ts"
+file-types = ["ts"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "   " }
+formatter = { command = "prettier" , args = ["--stdin-filepath", "${INPUT}"] }
+language-servers = [ "typescript-language-server" ]
+auto-format = true
+
+[[language]]
+name = "yaml"
+scope = "source.yaml"
+file-types = ["yaml", "yml"]
+comment-token = "#"
+indent = { tab-width = 2, unit = " " }
+formatter = { command = "prettier" , args = ["--stdin-filepath", "${INPUT}"] }
+language-servers = [ "yaml-language-server" ]
+auto-format = true
 
 [[language]]
 name = "c"
@@ -27,17 +65,25 @@ auto-format = true
 scope = "source.c"
 file-types = ["c", "h"]
 roots = ["compile_commands.json"]
-language-server = { command = "clangd" }
+language-servers = [ "clangd" ]
 
-[language-server.yaml-language-server.config.yaml]
-format = { enable = true }
-validation = true
-
-[language-server.yaml-language-server.config.yaml.schemas]
-"https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
-"https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "roles/{tasks,handlers}/*.{yml,yaml}"
-
-[[languages]]
-name = "go"
+[[language]]
+name = "python"
+scope = "source.python"
+file-types = ["py"]
+comment-token = "#"
+indent = { tab-width = 4, unit = " " }
+formatter = { command = "black" , args = ["--fast", "--quiet"] }
+language-servers = [ "pyright" ]
 auto-format = true
-formatter = { command = "goimports" }
+
+[[language]]
+name = "haskell"
+scope = "source.haskell"
+file-types = ["hs"]
+comment-token = "--"
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "ormolu" , args = [] }
+language-servers = [ "haskell-language-server-wrapper" ]
+auto-format = true
+

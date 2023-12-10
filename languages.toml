@@ -45,8 +45,16 @@ scope = "source.ts"
 file-types = ["ts"]
 comment-token = "//"
 indent = { tab-width = 4, unit = "   " }
-formatter = { command = "prettier" , args = ["--stdin-filepath", "${INPUT}"] }
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 language-servers = [ "typescript-language-server" ]
+auto-format = true
+
+
+[[language]]
+name = "javascript"
+formatter = { command = 'prettier', args = ["--parser", "babel"] }
+language-servers = [ "typescript-language-server" ]
+indent = { tab-width = 4, unit = "   " }
 auto-format = true
 
 [[language]]

@@ -15,7 +15,7 @@ scope = "source.rust"
 file-types = ["rs"]
 comment-token = "//"
 indent = { tab-width = 4, unit = "   " }
-formatter = { command = "rustfmt" , args = ["--emit=stdout"] }
+#formatter = { command = "rustfmt" , args = ["--emit=stdout"] }
 language-servers = [ "rust-analyzer" ]
 auto-format = true
 

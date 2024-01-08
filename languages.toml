@@ -95,3 +95,12 @@ formatter = { command = "ormolu" , args = [] }
 language-servers = [ "haskell-language-server-wrapper" ]
 auto-format = true
 
+[language-server.astro-ls]
+command = "astro-ls"
+args = ["--stdio"]
+config = {typescript = {tsdk = "/usr/local/lib/node_modules/typescript/lib"}, environment = "node"}
+
+[[language]]
+name = "astro"
+auto-format = true
+language-servers = [ "astro-ls" ]
